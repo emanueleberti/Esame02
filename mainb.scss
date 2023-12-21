@@ -1,0 +1,94 @@
+@import "variabili";
+@import "Mixin";
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+  font-family: "Raleway";
+  text-decoration: none;
+}
+
+
+
+
+/*Titolo e Immag*/
+.main-content {
+    position:relative;
+    
+    img {
+      position: relative;
+      width: 100% ;
+      margin-top: 0px;
+    }  
+}
+
+/*Titolo e immagine sotto i 480px*/
+@include mobile-query(480px){
+  /*Immagine*/
+  .main-content img {
+    width: 100%;
+    object-fit: cover;
+    height: 800px;
+  }
+}
+
+
+  
+/*Progetto*/
+.container {
+    display: flex;
+    max-width: 520px;
+    margin: 5%;
+    left: 20px;
+    text-align: justify;
+    /*Immagine*/        
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px; 
+        }
+}
+
+/*Scritte*/
+.content {
+margin-left: 80px;
+    /*Sito Web*/
+    h3 {
+        color: $primary-color;
+        margin-top: 40px;
+    }
+    /*Titolo*/
+    h1 {
+        font-size: 28px;
+        color: $test-color2;
+        margin-bottom: 25px;
+    }
+    /*Descrizione*/
+    p {
+        margin-right: 0%;
+    }
+}
+
+/*Progetto sotto i 730px*/
+@include mobile-query(890px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        /*Immagine*/
+        img {
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+    /*Scritte*/
+    .content {
+        margin-left: 0px;
+        text-align: justify;
+    }
+}

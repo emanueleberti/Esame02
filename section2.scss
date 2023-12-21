@@ -1,0 +1,71 @@
+@import "variabili";
+@import "Mixin";
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Raleway";
+    text-decoration: none;
+}
+
+/*Terza pagina*/
+.container {
+    display: flex;
+    max-width: 330px;
+    margin: 10%;
+    left: 20px;
+    text-align: justify;
+    /*Immagine*/
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+  
+  
+/*Scritte*/
+.content {
+margin-left: 80px; 
+    /*Web developer*/
+    h3 {
+        color: $primary-color;
+        margin-top: 40px;
+    }
+    /*Nome*/
+    h1 {
+        font-size: 35px;
+        color: $test-color2;
+        margin-bottom: 20px;
+    }
+    /*Descrizione*/
+    p {
+        margin-right: 10%;
+    }
+
+    div p {
+        font-size: 10px;
+    }
+}
+/*Terza pagina sotto i 730px*/
+@include mobile-query(730px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      /*Immagine*/
+      img {
+        padding: 0px;
+        margin: 0px;  
+      }
+    }
+    /*Scritte*/
+    .content {
+      margin-left: 0px;
+      text-align: justify;
+    }
+}

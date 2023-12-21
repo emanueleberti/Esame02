@@ -1,0 +1,83 @@
+@import "variabili";
+@import "Mixin";
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* {
+    font-family: "Raleway";
+    text-decoration: none;
+}
+
+
+/*Seconda pagina*/
+section {
+    margin: 0;
+    padding: 0;
+}
+/*Pulsante I miei progetti*/
+.pulsante-link {
+    display: inline-block;
+    padding: 10px 20px; 
+    background-color: $primary-color; 
+    color: $test-color; 
+    text-decoration: none;
+    border-radius: 20px; ; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    box-shadow: $shadow;
+    &:hover {
+        @include hover-scale;
+    }
+}
+  
+/*Contenitore img progetti*/
+.contenitore-immagini {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    /*Immagini progetti*/
+    img {
+        width: 45%;
+        margin: 10px; 
+        border-radius: 20px;
+        box-shadow: $shadow;
+        display: block;
+        margin-top: 40px;
+
+        &:hover {
+        @include hover-scale;
+        }
+    }
+}
+   
+/*Immagini sotto i 480px*/
+@include mobile-query(480px) {
+    .contenitore-immagini {
+        display: flex;
+        align-items: center;
+        height: 130vh; 
+        img {
+            width: 85%; 
+            margin: 10px;  
+            border-radius: 20px;
+        }
+    }
+}
+/*Immagini sotto i 480px*/
+@include mobile-query(400px) {
+    .contenitore-immagini img {
+        flex-direction:unset;
+    }
+}

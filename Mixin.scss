@@ -1,0 +1,13 @@
+/*Scalare*/
+@mixin hover-scale {
+    &:hover {
+      transform: scale(1.03);
+    }
+}
+/*@media query*/
+@mixin mobile-query($width) {
+    @media screen and (max-width: $width) {
+      @content;
+    }
+}
+
