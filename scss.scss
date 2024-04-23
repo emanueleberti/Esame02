@@ -1,0 +1,426 @@
+@import "variabili";
+@import "Mixing";
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* {
+    font-family: "Raleway";
+    text-decoration: none;
+}
+
+.errore{color:red;}
+
+/*Prima pagina*/
+.main-content {
+    position: relative;
+    /*Immagine*/
+    img {
+        position: relative;
+        width: 100% ;
+        margin-top: -150px;
+    }    
+} 
+/*Titolo*/
+.text-content {
+    color: $test-color;
+    margin: 30px;
+    top: 150px;
+    position: absolute;
+    /*Testo*/
+    h1 {
+        margin: 0px;
+        color:$test-color;
+        font-size: 55px;
+        width: 70%;
+        padding-left: 100px;
+        text-shadow: $shadow;
+        display: flex
+    }
+}
+
+/*Titolo e immagine sotto i 690px*/
+@include mobile-query(690px){
+    .main-content {  
+        img {
+            margin-top: -50px;
+        }
+    }
+}
+/*Titolo e immagine sotto i 390px*/
+@include mobile-query(390px) {
+    .main-content {  
+        img {
+            margin-top: -190px;
+        }
+    }
+}
+/*Titolo e immagine sotto i 530px*/
+@include mobile-query(530px){
+  /*Immagine*/
+  .main-content img {
+    width: 100%;
+    object-fit: cover;
+    height: 800px;
+  }
+  /*Titolo*/
+  .main-content .text-content {
+    position: absolute;
+    top:300px;
+    margin: 30px;
+    width: 70%;
+    display: flex;
+    font-size: 50px ;
+  }
+}
+/*Titolo e immagine sotto gli 830px*/
+@include mobile-query(830px) {
+  /*Titolo*/ 
+  .text-content h1 {
+      font-size: 55px;
+      position: relative;
+      bottom: 80px;
+      padding-left: 30px;
+      width: 95%;
+  }
+}
+/*Titolo e immagine sotto i 300px*/
+@include mobile-query(300px) {
+  /*Titolo*/
+  .text-content h1 {
+      font-size: 40px;
+  }
+}
+
+
+/*Competenze*/
+.item {
+    position: relative;
+  }
+  
+.percentage-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+  }
+  
+h2 {
+    margin-top: 10px;
+  }
+
+.page-title {
+    text-align: center;
+    font-size: 30px; 
+    margin: 40px; 
+    font-weight: bold;
+}
+
+.page-paragraph {
+    text-align: center;
+    font-size: 15px; 
+    margin-left: 25%;
+    margin-right: 25%;
+    line-height: 1.5;
+}
+
+
+.competenze {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+.skill {
+    width: 45%;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+.skill img {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+.skill h2 {
+    margin-top: 0;
+  }
+
+.skill p {
+    margin-bottom: 0;
+  }
+
+@media (max-width: 600px) {
+    .skill {
+      width: 100%;
+    }
+  }
+
+.container5 {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.footer5 {
+background-color: #ffffff;
+padding: 10px 0;
+position: relative;
+margin-bottom: 40px;
+}
+
+.wave-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+@include mobile-query(600px) {
+    .wave-svg {
+        height: 30px;
+        
+    }
+}
+
+
+  
+
+
+
+/*Progetti*/
+section {
+    margin: 0;
+    padding: 0;
+}
+/*Pulsante I miei progetti*/
+.pulsante-link {
+    display: inline-block;
+    padding: 10px 20px; 
+    background-color: $primary-color; 
+    color: $test-color; 
+    text-decoration: none;
+    border-radius: 20px; ; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    box-shadow: $shadow;
+    &:hover {
+        @include hover-scale;
+    }
+}
+  
+/*Contenitore img progetti*/
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; /* Spazio tra le colonne */
+    margin: 25px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+
+.image-grid a {
+    display:block;
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: $shadow;
+    overflow: hidden;
+    &:hover {
+        @include hover-scale;
+        }
+}    
+    
+
+   
+/*Immagini sotto i 480px*/
+@include mobile-query(480px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* Una colonna */
+    }
+}
+/*Immagini sotto i 480px*/
+@include mobile-query(400px) {
+    .contenitore-immagini img {
+        flex-direction:unset;
+    }
+}
+
+
+
+/*Descrizione*/
+.container {
+    display: flex;
+    max-width: 330px;
+    margin: 10%;
+    left: 20px;
+    text-align: justify;
+    /*Immagine*/
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+  
+/*Scritte*/
+.content {
+    margin-left: 80px; 
+    /*Web developer*/
+    h3 {
+        color: $primary-color;
+        margin-top: 40px;
+    }
+    /*Nome*/
+    h1 {
+        font-size: 35px;
+        color: $test-color2;
+        margin-bottom: 20px;
+    }
+    /*Descrizione*/
+    p {
+        margin-right: 10%;
+    }
+
+    div p {
+        font-size: 10px;
+    }
+}
+/*Terza pagina sotto i 730px*/
+@include mobile-query(730px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      /*Immagine*/
+      img {
+        padding: 0px;
+        margin: 0px;  
+      }
+    }
+    /*Scritte*/
+    .content {
+      margin-left: 0px;
+      text-align: justify;
+    }
+}
+
+
+
+/*Form*/
+footer {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: $background-color2;
+}
+/*Testo e Form*/
+.container3 {
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around
+}
+/*Testo*/
+.title3 {
+    flex: 1;
+    margin-right: 50px;
+    margin-left: 5%;
+    margin-top: 20px;
+    color: $primary-color;
+}
+/*Form*/
+.form-section {
+    flex: 1;
+    background-color: $background-color2;
+    padding: 30px;
+    padding-left: 40px;
+}
+/*Form-*/
+form {
+    display: flex;
+    flex-direction: column;
+    color: $test-color;
+}
+/*Testo nel form*/
+label {
+    margin-bottom: 5px;
+}
+/*Tasto nel form*/
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+/*Tasto Invia*/
+input[type=submit] {
+    background-color: $primary-color;
+    color: $test-color;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: $shadow;
+    margin-top: 15px;
+    /*Tasto Invia-hover*/
+    &:hover {
+        @include hover-scale;
+    }
+}
+.inviato {
+    color: $primary-color;
+    text-align: center;
+}
+
+/*Fine pagina*/
+.container4 {
+    position: relative;
+    padding: 80px;
+    background-color: $background-color;
+}
+/*Logo*/
+.image-container4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    img {
+        max-width: 100%;
+        height: 90px;
+        padding: 40px;
+        &:hover {
+            @include hover-scale;
+        }
+    }
+}
+
+/*Fine pagina sotto i 500px*/
+@media screen and (max-width: 500px) {
+    .container3 {
+        flex-direction: column; 
+        h1 {
+            text-align: left
+        }
+    
+    }
+
+    .title3 .form-section {
+        width: 100%;
+        margin: 20px;
+    }
+
+    .title3 {
+        margin-left: 40px;
+    }
+}
+

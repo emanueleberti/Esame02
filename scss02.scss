@@ -1,0 +1,191 @@
+@import "variabili";
+@import "Mixing";
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+  font-family: "Raleway";
+  text-decoration: none;
+}
+
+.errore{color:red;}
+
+/*Progetto*/
+
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 520px;
+  margin: 5%;
+  text-align: justify;
+  margin-top: 150px;
+  /*Immagine*/        
+  img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px; 
+    }
+}
+
+/*Scritte*/
+.content {
+margin-left: 80px;
+align-items: center;
+  /*Sito Web*/
+  h3 {
+      color: $primary-color;
+      margin-top: 40px;
+  }
+  /*Titolo*/
+  h1 {
+      font-size: 28px;
+      color: $test-color2;
+      margin-bottom: 25px;
+  }
+  /*Descrizione*/
+  p {
+      margin-right: -150px;
+  }
+}
+
+/*Progetto sotto i 890px*/
+@include mobile-query(890px) {
+  .container {
+      flex-direction: column;
+      text-align: center;
+      /*Immagine*/
+      img {
+          padding: 0px;
+          margin: 0px;
+      }
+  }
+  /*Scritte*/
+  .content {
+      margin-left: 0px;
+      text-align: justify;
+      p {
+        margin-right: 0%;
+    }
+  }
+}
+
+
+
+
+/*Form per preventivo*/
+footer {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $background-color2;
+}
+/*Testo e Form*/
+.container3 {
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+}
+/*Testo*/
+.title3 {
+  flex: 1;
+  margin-right: 50px;
+  margin-left: 5%;
+  margin-top: 20px;
+  color: $primary-color;
+}
+/*Form*/
+.form-section {
+  flex: 1;
+  background-color: $background-color2;
+  padding: 30px;
+  padding-left: 40px;
+}
+/*Form-*/
+form {
+  display: flex;
+  flex-direction: column;
+  color: $background-color;
+}
+/*Testo nel form*/
+label {
+  margin-bottom: 5px;
+}
+/*Tasto nel form*/
+input {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+/*Tasto Invia*/
+input[type="submit"] {
+  background-color: $primary-color;
+  color: $secondary-color;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: $shadow;
+  margin-top: 15px;
+  /*Tasto Invia-hover*/
+  &:hover {
+      @include hover-scale;
+  }
+}
+.inviato {
+  color: $primary-color;
+  text-align: center;
+}
+
+/*Fine pagina*/
+.container4 {
+  position: relative;
+  padding: 80px;
+  background-color: $background-color;
+}
+/*Logo*/
+.image-container4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  img {
+      max-width: 100%;
+      height: 90px;
+      padding: 40px;
+      &:hover {
+      @include hover-scale;
+      }
+  }
+}
+
+
+/*Ultima pagina sotto i 500px*/
+@media (max-width: 500px) {
+  .container3 {
+      flex-direction: column;
+      h1 {
+          text-align: left;
+      }
+  }
+  .title3 .form-section {
+      width: 100%;
+      margin: 20px;
+  }
+  .title3 {
+      margin-left: 40px;
+  }
+}
+
+
+
+
+
+
+
