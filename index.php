@@ -126,5 +126,9 @@
       require_once( 'form.php' ); // Carica il file form.php
     ?>
     
+    <!-- Login -->
+    <?php
+      require_once( 'login.php' ); // Carica il file index.php
+    ?>
   </body>
 </html>

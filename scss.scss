@@ -424,3 +424,56 @@ input[type=submit] {
     }
 }
 
+
+
+
+
+
+/*Login Backend*/
+.loginbackend {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: $background-color2;
+}
+
+.login-page {
+    font-family: Arial, sans-serif;
+    background-color: $test-color;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    padding-right: 80px;
+}
+
+
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 25px;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.button {
+    width: 100%;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    color: $test-color;
+    cursor: pointer;
+}
+
+.error {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+}
